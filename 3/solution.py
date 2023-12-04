@@ -24,19 +24,23 @@ partNumberList = []
 
 def helper(yCord, xCord):
   partNumber = str(partList[yCord][xCord])
+  partList[yCord][xCord] = '.'
   x = 1
   while xCord - x >= 0 and partList[yCord][xCord - x].isdigit():
     partNumber = partList[yCord][xCord - x] + partNumber
+    partList[yCord][xCord - x] = '.'
     x += 1
   x = 1
   while xCord + x < partLen and partList[yCord][xCord + x].isdigit():
     partNumber += partList[yCord][xCord + x]
+    partList[yCord][xCord + x] = '.'
     x += 1
-  if partNumber not in partNumberList:
-    partNumberList.append(partNumber)
-    return int(partNumber)
-  else:
-    return 0
+  # if partNumber not in partNumberList:
+  #   partNumberList.append(partNumber)
+  #   return int(partNumber)
+  # else:
+  #   return 0
+  return int(partNumber)
 
 for symbol in symbolCords:
   print(symbol)
