@@ -35,11 +35,6 @@ def helper(yCord, xCord):
     partNumber += partList[yCord][xCord + x]
     partList[yCord][xCord + x] = '.'
     x += 1
-  # if partNumber not in partNumberList:
-  #   partNumberList.append(partNumber)
-  #   return int(partNumber)
-  # else:
-  #   return 0
   return int(partNumber)
 
 for symbol in symbolCords:
